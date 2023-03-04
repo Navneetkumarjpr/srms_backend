@@ -17,17 +17,17 @@ console.log(process.env.PORT);
 const port = process.env.PORT || 8000;
 // app.use("/",Routes);
 app.use('/',Routes)
-if(process.env.NODE_ENV === 'production'){      // set static folder 
-    //returning frontend for any route other than api 
-    app.get('/',(req,res)=>{     
-        app.use(express.static(path.resolve(__dirname,'client','build')))
-        res.sendFile(path.resolve(__dirname,'client','build','index.html'),function(err) {
-            if(err){
-                res.status(500).send(err);
-            }
-        });    
-    });
-}
+// if(process.env.NODE_ENV === 'production'){      // set static folder 
+//     //returning frontend for any route other than api 
+//     app.get('/',(req,res)=>{     
+//         app.use(express.static(path.resolve(__dirname,'client','build')))
+//         res.sendFile(path.resolve(__dirname,'client','build','index.html'),function(err) {
+//             if(err){
+//                 res.status(500).send(err);
+//             }
+//         });    
+//     });
+// }
 app.listen(port,()=>{
     console.log("server started hello");
 }) 
